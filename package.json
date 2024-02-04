@@ -41,10 +41,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/fima-taf/nolybab-js.git"
+    "url": "git+https://github.com/bastos71/nolybab-js.git"
   },
   "bugs": {
     "url": "https://github.com/fima-taf/nolybab-js/issues"
   },
-  "homepage": "https://github.com/fima-taf/nolybab-js#readme"
+  "homepage": "https://github.com/bastos71/nolybab-js/tree/fork/release#readme"
 }
