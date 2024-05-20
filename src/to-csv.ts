@@ -48,7 +48,14 @@ export const loadLanguageFiles = (i18nFilesPath: string): LanguageFile[] => {
     if (f.includes(`.${FileTypes.JSON}`)) {
       const langFile = fs.readFileSync(`${i18nFilesPath}/${f}`, {encoding: 'utf-8'})
       if (langFile) {
-        langFiles.push({name: f, file: JSON.parse(langFile) as I18nObject})
+        try {
+          langFiles.push({name: f, file: JSON.parse(langFile) as I18nObject});
+          console.info(`JSON file loaded : ${f}`);
+        } catch (error) {
+          console.error(chalk.red(`There as been an error while loading JSON file ${f}`));
+          console.error(chalk.red(error));
+          console.error(error);
+        }
       } else {
         throw new Error(`The language file '${f}' wasn't found in '${i18nFilesPath}'`)
       }
